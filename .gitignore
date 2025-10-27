@@ -2,3 +2,4 @@
 *.cfg
 *.idea
 Lib/
+/Lib/

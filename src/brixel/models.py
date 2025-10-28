@@ -9,6 +9,8 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import torch.utils.checkpoint as cp
+from importlib.resources import files, as_file
+
 
 from functools import partial
 from brixel.dinov3_main.dinov3.eval.segmentation.models.utils.ms_deform_attn import MSDeformAttn
@@ -653,7 +655,9 @@ BLOCK_INDICES = {
 }
 
 def build_model(load_name, dinov3_weight_path, adapter_weight_path, block_indices=None):
-    repo_dir = 'src/brixel/dinov3_main'
+    D3_MAIN = files("brixel").joinpath("dinov3_main")
+    with as_file(D3_MAIN) as d3_path:
+        repo_dir = str(d3_path)
 
     backbone = torch.hub.load(repo_dir, load_name, source='local',
                               weights=dinov3_weight_path)

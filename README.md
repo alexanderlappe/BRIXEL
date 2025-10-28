@@ -2,18 +2,15 @@
 
 # BRIXEL
 
-This is the official implementation of BRIXEL (put paper name). Brixel allows the user to prduce high-resolution feature maps using the DINOv3 backbone without requiring large amounts of compute.
+This is the official implementation of **Another BRIXEL in the Wall: Cheap Dense Features for DINOv3** (put link). BRIXEL allows the user to produce high-resolution feature maps using the DINOv3 backbone without requiring large amounts of compute.
 
 [ :scroll: [`Paper`](https://arxiv.org/abs/2508.10104)] [ :newspaper: [`Blog`](https://ai.meta.com/blog/dinov3-self-supervised-vision-model/)] [ :globe_with_meridians: [`Website`](https://ai.meta.com/dinov3/)] [ :book: [`BibTeX`](#citing-dinov3)]
 
 ## Overview
-
-Put the overview figure as well as the example figures.
-
 <div align="center">
-  <img width="1364" height="1024" alt="market" src="https://github.com/user-attachments/assets/1411f491-988e-49cb-95ae-d03fe6e3c268" />
+  <img width="1364" height="1024" alt="market" src="https://github.com/alexanderlappe/BRIXEL/blob/master/figs/overview.png" />
 
-  <i></em><b>High-resolution dense features.</b><br/>We visualize the cosine similarity maps obtained with DINOv3 output features<br/> between the patches marked with a red cross and all other patches.</i>
+  <i></em>Equipped with BRIXEL, DINOv3 outputs higher resolution features at a fraction of the computational cost.</i>
 </div>
 
 <br/>
@@ -21,8 +18,19 @@ Put the overview figure as well as the example figures.
 
 
 ## Installation
+### a) Installing as a package
+If you just need the pretrained models for generating dense features, you can simply install BRIXEL as a package and build the models as shown below.
+```
+pip install 
+```
 
-a )Either just do install from git 
+
+### b) Clone the repo
+If you wish to work with or modify the code, please clone the repo and install from requirements.txt, as well as PyTorch.
+
+
+
+
 
 or b) clone the repo and then hit 
 pip install -e .
@@ -40,7 +48,6 @@ To use the pretrained models, please first download the weights of the DINOv3 ba
 
 Then download the BRIXEL weights here:
 
-ViT models pretrained on web dataset (LVD-1689M):
 <table style="margin: auto">
   <thead>
     <tr>
@@ -121,9 +128,19 @@ def make_transform(resize_size: int = 256):
     return v2.Compose([to_tensor, resize, to_float, normalize])
 ```
 
-## License
+## Examples
 
-DINOv3 code and model weights are released under the DINOv3 License. See [LICENSE.md](LICENSE.md) for additional details.
+<div align="center">
+  <img width="1364" height="1024" alt="market" src="https://github.com/alexanderlappe/BRIXEL/blob/master/figs/qualitative.png" />
+
+  <i></em>Examples of dense features maps produced by the BRIXEL models.</i>
+</div>
+
+<br/>
+
+## License
+Our license...
+DINOv3 code and model weights are released under the DINOv3 License. See the original [LICENSE.md](LICENSE.md) for additional details.
 
 ## Citation
 

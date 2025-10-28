@@ -7,8 +7,8 @@ from functools import partial
 
 import torch
 
-from modeling.dinov3.dinov3_main.dinov3.eval.segmentation.models.backbone.dinov3_adapter import DINOv3_Adapter
-from modeling.dinov3.dinov3_main.dinov3.eval.segmentation.models.heads.mask2former_head import Mask2FormerHead
+from brixel.dinov3_main.dinov3.eval.segmentation.models.backbone.dinov3_adapter import DINOv3_Adapter
+from brixel.dinov3_main.dinov3.eval.segmentation.models.heads.mask2former_head import Mask2FormerHead
 
 
 BACKBONE_INTERMEDIATE_LAYERS = {

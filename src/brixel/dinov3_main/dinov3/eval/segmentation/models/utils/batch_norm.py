@@ -10,7 +10,7 @@ from torch import nn
 from torch.nn import functional as F
 from torch.nn import BatchNorm2d
 
-import modeling.dinov3.dinov3_main.dinov3.distributed as distributed
+import brixel.dinov3_main.dinov3.distributed as distributed
 
 
 class FrozenBatchNorm2d(nn.Module):

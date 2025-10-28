@@ -11,8 +11,7 @@ import torch.nn.functional as F
 import torch.utils.checkpoint as cp
 
 from functools import partial
-
-from dinov3_main.dinov3.eval.segmentation.models.utils.ms_deform_attn import MSDeformAttn
+from brixel.dinov3_main.dinov3.eval.segmentation.models.utils.ms_deform_attn import MSDeformAttn
 
 
 def drop_path(x, drop_prob: float = 0.0, training: bool = False):
@@ -654,7 +653,7 @@ BLOCK_INDICES = {
 }
 
 def build_model(load_name, dinov3_weight_path, adapter_weight_path, block_indices=None):
-    repo_dir = 'dinov3_main'
+    repo_dir = 'src/brixel/dinov3_main'
 
     backbone = torch.hub.load(repo_dir, load_name, source='local',
                               weights=dinov3_weight_path)

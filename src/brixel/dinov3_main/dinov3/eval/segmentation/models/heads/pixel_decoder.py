@@ -13,10 +13,10 @@ from torch.nn import functional as F
 from torch.nn.init import normal_
 from torch.amp import autocast
 
-from modeling.dinov3.dinov3_main.dinov3.eval.segmentation.models.utils.batch_norm import get_norm
-from modeling.dinov3.dinov3_main.dinov3.eval.segmentation.models.utils.position_encoding import PositionEmbeddingSine
-from modeling.dinov3.dinov3_main.dinov3.eval.segmentation.models.utils.transformer import _get_clones, _get_activation_fn
-from modeling.dinov3.dinov3_main.dinov3.eval.segmentation.models.utils.ms_deform_attn import MSDeformAttn
+from brixel.dinov3_main.dinov3.eval.segmentation.models.utils.batch_norm import get_norm
+from brixel.dinov3_main.dinov3.eval.segmentation.models.utils.position_encoding import PositionEmbeddingSine
+from brixel.dinov3_main.dinov3.eval.segmentation.models.utils.transformer import _get_clones, _get_activation_fn
+from brixel.dinov3_main.dinov3.eval.segmentation.models.utils.ms_deform_attn import MSDeformAttn
 
 
 def c2_xavier_fill(module: nn.Module) -> None:

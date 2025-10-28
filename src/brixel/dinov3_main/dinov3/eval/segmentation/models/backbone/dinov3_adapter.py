@@ -13,7 +13,7 @@ import torch.utils.checkpoint as cp
 from functools import partial
 from einops import rearrange
 
-from modeling.dinov3.dinov3_main.dinov3.eval.segmentation.models.utils.ms_deform_attn import MSDeformAttn
+from brixel.dinov3_main.dinov3.eval.segmentation.models.utils.ms_deform_attn import MSDeformAttn
 
 
 def drop_path(x, drop_prob: float = 0.0, training: bool = False):
@@ -647,49 +647,4 @@ class Upsampler(nn.Module):
     def forward(self, x):
         adapter_out = self.adapter(x)
         return self.head(adapter_out)
-
-
-
-from transformers import AutoModel, AutoProcessor
-from transformers.image_utils import load_image
-from modeling.dinov3.upsampling.siglip2 import SiglipModel
-
-class SiglipBackbone(nn.Module):
-    def __init__(self, weight_path):
-        super().__init__()
-        model = SiglipModel.from_pretrained(weight_path)
-        model = model.vision_model
-        model.eval()
-        self.model = model
-        self.processor = AutoProcessor.from_pretrained(weight_path)
-        self.processor.image_processor.do_resize = False
-        self.processor.image_processor.do_center_crop = False
-        self.processor.image_processor.do_rescale = False
-        self.patch_size = 16
-        self.embed_dim = 768
-
-
-    def get_intermediate_layers(self, x, n, return_class_token=False, reshape=False):
-        x = x.clamp_(0, 1)   # the processor doesnt like it if input is slightly out of [0, 1]
-        with torch.no_grad():
-            inputs = self.processor(images=x, return_tensors="pt").to(x.device)
-            # intermediates = self.model(inputs['pixel_values'], output_hidden_states=True,
-            #                            interpolate_pos_encoding=False)['hidden_states']
-            try:   # don't interpolate at the original training resolution
-                intermediates = self.model(inputs['pixel_values'], output_hidden_states=True,
-                                           interpolate_pos_encoding=False)['hidden_states']
-            except:
-                intermediates = self.model(inputs['pixel_values'], output_hidden_states=True,
-                                           interpolate_pos_encoding=True)['hidden_states']
-            if isinstance(n, int):   # if n == 1, DINOv3 takes the last layer (used to extract targets)
-                n = [9]             # for transformers models it takes the first layer
-            intermediates = [m / torch.linalg.norm(m, dim=-1, keepdim=True) for m in intermediates]
-            if reshape:
-                intermediates = [rearrange(m, 'b (h w) feats -> b feats h w', h=int(m.shape[1] ** 0.5)) for m in intermediates]
-            if return_class_token:
-                intermediates = [(intermediates[i], None) for i in n]
-            else:
-                intermediates = [intermediates[i]for i in n]
-        return intermediates
-
 

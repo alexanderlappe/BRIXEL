@@ -11,7 +11,7 @@ import torch
 from torch import nn, Tensor
 from torch.nn import functional as F
 
-from modeling.dinov3.dinov3_main.dinov3.eval.segmentation.models.utils.position_encoding import PositionEmbeddingSine
+from brixel.dinov3_main.dinov3.eval.segmentation.models.utils.position_encoding import PositionEmbeddingSine
 
 
 def c2_xavier_fill(module: nn.Module) -> None:

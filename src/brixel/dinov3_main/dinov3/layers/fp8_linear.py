@@ -7,8 +7,8 @@ import re
 
 import torch
 
-from modeling.dinov3.dinov3_main.dinov3.layers.attention import LinearKMaskedBias
-from modeling.dinov3.dinov3_main.dinov3.utils import named_replace
+from brixel.dinov3_main.dinov3.layers.attention import LinearKMaskedBias
+from brixel.dinov3_main.dinov3.utils import named_replace
 
 # avoid division by zero when calculating scale
 EPS = 1e-12

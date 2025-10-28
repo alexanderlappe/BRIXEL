@@ -8,7 +8,7 @@ from typing import List, Tuple
 
 import torch
 import torch.nn.functional as F
-from modeling.dinov3.dinov3_main.dinov3.utils import cat_keep_shapes, uncat_with_shapes
+from brixel.dinov3_main.dinov3.utils import cat_keep_shapes, uncat_with_shapes
 from torch import Tensor, nn
 
 

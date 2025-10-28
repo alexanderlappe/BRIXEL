@@ -19,25 +19,30 @@ This is the official implementation of **Another BRIXEL in the Wall: Cheap Dense
 
 ## Installation
 ### a) Installing as a package
-If you just need the pretrained models for generating dense features, you can simply install BRIXEL as a package and build the models as shown below.
+If you just need the pretrained models to generate dense features, you can simply install BRIXEL as a package and build the models as shown below.
 ```
-pip install 
+pip install "git+https://github.com/alexanderlappe/BRIXEL.git"
+```
+
+Note that PyTorch is not automatically installed as a dependency, but necessary to run the models. Finally, build Deformable attention:
+```
+cd BRIXEL/src/brixel/dinov3_main/dinov3/eval/segmentation/models/utils/ops
+python setup.py build_ext --inplace
 ```
 
 
 ### b) Clone the repo
 If you wish to work with or modify the code, please clone the repo and install from requirements.txt, as well as PyTorch.
-
-
-
-
-
-or b) clone the repo and then hit 
+```
+git clone # put in the correct command
+pip install -r requirements.txt
 pip install -e .
-
-Then Build DeformAttention
-cd BRIXEL/src/brixel/dinov3_main/dinov3/eval/segmentation/models/utils/ops
+```
+To build Deformable Attention,
+```
+cd brixel/dinov3_main/dinov3/eval/segmentation/models/utils/ops # navigate to this directory within the installed package
 python setup.py build_ext --inplace
+```
 
 
 

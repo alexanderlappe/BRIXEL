@@ -4,7 +4,6 @@
 
 This is the official implementation of **Another BRIXEL in the Wall: Cheap Dense Features for DINOv3** (put link). BRIXEL allows the user to produce high-resolution feature maps using the DINOv3 backbone without requiring large amounts of compute.
 
-[ :scroll: [`Paper`](https://arxiv.org/abs/2508.10104)] [ :newspaper: [`Blog`](https://ai.meta.com/blog/dinov3-self-supervised-vision-model/)] [ :globe_with_meridians: [`Website`](https://ai.meta.com/dinov3/)] [ :book: [`BibTeX`](#citing-dinov3)]
 
 ## Overview
 <div align="center">
@@ -18,7 +17,7 @@ This is the official implementation of **Another BRIXEL in the Wall: Cheap Dense
 
 
 ## Installation
-### a) Installing as a package
+### a) Install as a package
 If you just need the pretrained models to generate dense features, you can simply install BRIXEL as a package and build the models as shown below.
 ```
 pip install "git+https://github.com/alexanderlappe/BRIXEL.git"
@@ -144,8 +143,7 @@ def make_transform(resize_size: int = 256):
 <br/>
 
 ## License
-Our license...
-DINOv3 code and model weights are released under the DINOv3 License. See the original [LICENSE.md](LICENSE.md) for additional details.
+BRIXEL itself is licensed under the MIT license. Please note that DINOv3 code and model weights are released under the DINOv3 License. See the original [LICENSE.md](LICENSE.md) for additional details.
 
 ## Citation
 

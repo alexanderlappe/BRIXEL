@@ -56,47 +56,35 @@ Then download the BRIXEL weights here:
   <thead>
     <tr>
       <th>Model</th>
-      <th>Parameters</th>
-      <th>Pretraining<br/>Dataset</th>
+      <th>Image Size</th>
       <th>Download</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>ViT-S </td>
-      <td align="right">21M</td>
-      <td align="center">LVD-1689M</td>
+      <td align="center">256</td>
       <td align="center"><a href="https://drive.google.com/file/d/1ItRulT6xzhkY6DHRJi8t5k3kbDAoLeVf/view?usp=drive_link">[link]</a></td>
     </tr>
     <tr>
-      <td>ViT-S+/16 distilled</td>
-      <td align="right">29M</td>
-      <td align="center">LVD-1689M</td>
-      <td align="center"><a href="https://ai.meta.com/resources/models-and-libraries/dinov3-downloads/">[link]</a></td>
+      <td>ViT-B </td>
+      <td align="center">256</td>
+      <td align="center"><a href="https://drive.google.com/file/d/1eVYNr1ZyhxTSPwbUb-aPdD52d2hGubLQ/view?usp=sharing">[link]</a></td>
     </tr>
     <tr>
-      <td>ViT-B/16 distilled</td>
-      <td align="right">86M</td>
-      <td align="center">LVD-1689M</td>
-      <td align="center"><a href="https://ai.meta.com/resources/models-and-libraries/dinov3-downloads/">[link]</a></td>
+      <td>ViT-L </td>
+      <td align="center">256</td>
+      <td align="center"><a href="https://drive.google.com/file/d/1LuRXvqxz_T5xIKe4DANc4KW3hiPUETzX/view?usp=sharing">[link]</a></td>
     </tr>
     <tr>
-      <td>ViT-L/16 distilled</td>
-      <td align="right">300M</td>
-      <td align="center">LVD-1689M</td>
-      <td align="center"><a href="https://ai.meta.com/resources/models-and-libraries/dinov3-downloads/">[link]</a></td>
+      <td>ViT-H+ </td>
+      <td align="center">256</td>
+      <td align="center"><a href="https://drive.google.com/file/d/1h3erb8L1gG_dUMw57mGIL06LGuxHD47n/view?usp=sharing">[link]</a></td>
     </tr>
     <tr>
-      <td>ViT-H+/16 distilled</td>
-      <td align="right">840M</td>
-      <td align="center">LVD-1689M</td>
-      <td align="center"><a href="https://ai.meta.com/resources/models-and-libraries/dinov3-downloads/">[link]</a></td>
-    </tr>
-    <tr>
-      <td>ViT-7B/16</td>
-      <td align="right">6,716M</td>
-      <td align="center">LVD-1689M</td>
-      <td align="center"><a href="https://ai.meta.com/resources/models-and-libraries/dinov3-downloads/">[link]</a></td>
+      <td>ViT-B </td>
+      <td align="center">480</td>
+      <td align="center"><a href="https://drive.google.com/file/d/1f_vpsCCkGZCXGgoGgd0AnJ1GoQJSvmee/view?usp=sharing">[link]</a></td>
     </tr>
   </tbody>
 </table>

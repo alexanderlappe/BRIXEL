@@ -23,7 +23,7 @@ If you just need the pretrained models to generate dense features, you can simpl
 pip install "git+https://github.com/alexanderlappe/BRIXEL.git"
 ```
 
-Note that PyTorch is not automatically installed as a dependency, but necessary to run the models. Finally, build Deformable attention:
+Note that PyTorch is not automatically installed as a dependency, so BRIXEL assumes it to be installed prior. The package has been tested with PyTorch version 2.9.0. Finally, you will need to build Deformable Attention for DINO:
 ```
 cd BRIXEL/src/brixel/dinov3_main/dinov3/eval/segmentation/models/utils/ops
 python setup.py build_ext --inplace
@@ -31,13 +31,13 @@ python setup.py build_ext --inplace
 
 
 ### b) Clone the repo
-If you wish to work with or modify the code, please clone the repo and install from requirements.txt, as well as PyTorch.
+If you wish to work with or modify the code, please clone the repo and install the dependencies from requirements.txt, as well as PyTorch.
 ```
 git clone # put in the correct command
 pip install -r requirements.txt
 pip install -e .
 ```
-To build Deformable Attention,
+To build Deformable Attention for DINO, run the following:
 ```
 cd brixel/dinov3_main/dinov3/eval/segmentation/models/utils/ops # navigate to this directory within the installed package
 python setup.py build_ext --inplace
@@ -97,6 +97,8 @@ from brixel.models import build_model
 dino_weight_path = '/backbone_weights/dinov3_vitb16_pretrain_lvd1689m-73cec8be.pth'
 adapter_weight_path = '/saved_models/dinov3_vitb16.pth'
 brixel_model = build_model('dinov3_vitb16', dino_weight_path, adapter_weight_path)
+
+# model identifier should be one of ['dinov3_vits16', 'dinov3_vitb16, 'dinov3_vitl16', 'dinov3_vith16plus']
 ```
 
 

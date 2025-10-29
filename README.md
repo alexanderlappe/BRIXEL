@@ -63,10 +63,10 @@ Then download the BRIXEL weights here:
   </thead>
   <tbody>
     <tr>
-      <td>ViT-S/16 distilled </td>
+      <td>ViT-S </td>
       <td align="right">21M</td>
       <td align="center">LVD-1689M</td>
-      <td align="center"><a href="https://ai.meta.com/resources/models-and-libraries/dinov3-downloads/">[link]</a></td>
+      <td align="center"><a href="https://drive.google.com/file/d/1ItRulT6xzhkY6DHRJi8t5k3kbDAoLeVf/view?usp=drive_link">[link]</a></td>
     </tr>
     <tr>
       <td>ViT-S+/16 distilled</td>

@@ -1,0 +1,5 @@
+# created by virtualenv automatically
+*.cfg
+*.idea
+Lib/
+/Lib/

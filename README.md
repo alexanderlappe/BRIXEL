@@ -158,8 +158,7 @@ show_img_and_feat(x.squeeze(), high_res_feats.squeeze(), high_res_feats.squeeze(
 <br/>
 
 ## License
-BRIXEL itself is licensed under the MIT license. Please note that DINOv3 code and model weights are released under the DINOv3 License. See the original [LICENSE.md](LICENSE.md) for additional details.
-
+BRIXEL itself is licensed under the MIT license. Please note that DINOv3 code and model weights are released under the <a href="https://github.com/alexanderlappe/BRIXEL/blob/master/src/brixel/dinov3_main/LICENSE.md">DINOv3 License</a>.
 ## Citation
 
 If you find this repo useful, please consider citing the paper:

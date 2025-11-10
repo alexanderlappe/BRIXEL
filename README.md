@@ -2,7 +2,7 @@
 
 # BRIXEL
 
-This is the official implementation of **Another BRIXEL in the Wall: Cheap Dense Features for DINOv3**. BRIXEL allows the user to produce high-resolution feature maps using the DINOv3 backbone without requiring large amounts of compute.
+This is the official implementation of <a href="https://arxiv.org/abs/2511.05168">**Another BRIXEL in the Wall: Towards Cheaper Dense Features**</a>. BRIXEL allows the user to produce high-resolution feature maps using the DINOv3 backbone without requiring large amounts of compute.
 
 
 ## Overview
@@ -162,10 +162,22 @@ BRIXEL itself is licensed under the MIT license. Please note that DINOv3 code an
 
 ## Citation
 
-If you find this repo useful, please consider citing the paper
+If you find this repo useful, please consider citing the paper:
 
 
- as well as the DINOv3 paper
+```
+@misc{lappe2025brixelwallcheaperdense,
+      title={Another BRIXEL in the Wall: Towards Cheaper Dense Features}, 
+      author={Alexander Lappe and Martin A. Giese},
+      year={2025},
+      eprint={2511.05168},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2511.05168}, 
+}
+```
+
+ as well as the DINOv3 paper:
 
 ```
 @misc{simeoni2025dinov3,

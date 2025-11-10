@@ -39,7 +39,7 @@ pip install -e .
 ```
 To build Deformable Attention for DINO, run the following:
 ```
-cd srcbrixel/dinov3_main/dinov3/eval/segmentation/models/utils/ops # navigate to this directory within the installed package
+cd src/brixel/dinov3_main/dinov3/eval/segmentation/models/utils/ops # navigate to this directory within the installed package
 python setup.py build_ext --inplace
 ```
 
